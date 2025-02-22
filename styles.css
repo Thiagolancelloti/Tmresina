@@ -43,6 +43,7 @@ nav ul {
     margin-top: 0;
      flex-direction: column; /* Coloca os itens do menu em coluna */
         align-items: center;
+    margin: 0.5rem 0; /* Reduz o espaçamento entre os itens */
 }
 
 nav ul li {
