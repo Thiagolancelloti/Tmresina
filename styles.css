@@ -28,7 +28,8 @@ header {
         align-items: center; /* Centraliza verticalmente */
         justify-content: space-between; /* Espaço entre logo e menu */
         padding: 0 5rem; /* Adiciona um padding nas laterais */
-    
+    flex-direction: column; /* Coloca a logo e o menu em coluna */
+    align-items: center; /* Centraliza horizontalmente */
 }
 
 header .logo img {
