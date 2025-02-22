@@ -1,0 +1,543 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Ocupa 100% da altura da tela */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: rgb(236, 201, 201);
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: rgba(221, 176, 176, 1);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+        display: flex;
+        align-items: center; /* Centraliza verticalmente */
+        justify-content: space-between; /* Espaço entre logo e menu */
+        padding: 0 5rem; /* Adiciona um padding nas laterais */
+    
+}
+
+header .logo img {
+    max-width: 350px;
+}
+
+/* Menu de Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+}
+
+nav ul li {
+    margin: 0 2rem;
+    
+    position: relative;
+}
+
+nav ul li a {
+    color: #611515;
+    text-decoration: none;
+    font-size: 2.0rem;
+    transition: color 0.3s ease;
+    font-family: "Playwrite IT Moderna", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+nav ul li a:hover {
+    color: #050000;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #611515;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Banner */
+.banner {
+    background-color: rgba(221, 176, 176, 1);
+    background-size: cover;
+    background-position: center;
+    color: #611515;
+    text-align: center;
+    padding: 0rem 1rem; /* Padding reduzido */
+    font-family: "Playwrite IT Moderna", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+.banner h1 {
+    font-size: 4rem;
+}
+
+.banner p {
+    font-size: 1.5rem;
+}
+
+/* Seção de Produtos */
+#produtos {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+#produtos h2 {
+    color: #611515;
+    font-size: 3rem;
+    font-family: "Playwrite IT Moderna", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+.categoria {
+    margin-bottom: 3rem;
+}
+
+.categoria h3 {
+    font-size: 1rem;
+    color: #611515;
+    margin-bottom: 1.5rem;
+}
+
+.produtos-lista {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.produto {
+    background-color: rgba(221, 176, 176, 1);
+    border: 8px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem; /* Padding aumentado */
+    width: 250px; /* Largura aumentada */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+}
+
+.produto:hover {
+    background-color: rgba(56, 56, 56, 0.5);
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.produto img {
+    width: 200px; /* Largura aumentada */
+    height: 200px; /* Altura aumentada */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    border-radius: 10px;
+}
+
+.produto h3, .produto h4 {
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.produto p {
+    font-size: 1.2rem;
+    color: #611515;
+    font-weight: bold;
+}
+
+footer {
+    flex-shrink: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(221, 176, 176, 1);
+}
+
+footer a {
+    margin: 10px 0;
+    text-decoration: none;
+    font-size: 1rem; /* Tamanho reduzido */
+    color: #611515;
+}
+
+footer p {
+    font-size: 1rem; /* Tamanho reduzido */
+    margin-bottom: 0rem;
+    color: #611515;
+    font-family: "Playwrite IT Moderna", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 1rem; /* Espa
+    margin-top: 0rem; /* Espaçamento reduzido */
+}
+
+.redes-sociais a {
+    color: #611515;
+    font-size: 1.5rem; /* Tamanho reduzido */
+    transition: color 0.3s ease;
+}
+
+.redes-sociais a:hover {
+    color: rgb(236, 201, 201);
+}
+
+.produto a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(172, 110, 110);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.produto a:hover {
+    background-color: rgb(172, 110, 110);
+}
+
+/* Estilo para a página de detalhes do produto */
+.detalhes-produto {
+    padding: 3rem;
+    text-align: center;
+}
+
+.detalhes-produto h2 {
+    color: #611515;
+    font-size: 4rem;
+    font-family: "Playwrite IT Moderna", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+.detalhes-produto p {
+    font-size: 1.5rem;
+    color: #611515;
+    margin-bottom: 2rem;
+}
+
+.modelos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.modelo {
+    background-color: rgba(221, 176, 176, 1);
+    border: 8px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modelo:hover {
+    background-color: rgba(56, 56, 56, 0.5);
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modelo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.modelo h3 {
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.modelo p {
+    font-size: 1.2rem;
+    color: #611515;
+    font-weight: bold;
+}
+
+.modelo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(172, 110, 110);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.modelo a:hover {
+    background-color: rgb(172, 110, 110);
+}
+
+/* Estilo para a página de informações */
+.informacoes {
+    padding: 3rem;
+    text-align: center;
+    
+}
+
+.informacoes h2 {
+    color: #611515;
+    font-size: 3rem;
+    font-family: "Playwrite IT Moderna", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    background-color: rgba(221, 176, 176, 1);
+    border: 8px solid #ddd;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 800px;
+    text-align: left;
+}
+
+.info-item h3 {
+    color: #611515;
+    font-size: 1.5rem; /* Tamanho da fonte reduzido */
+    margin-bottom: 1rem;
+}
+
+.info-item p {
+    font-size: 1rem; /* Tamanho da fonte reduzido */
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.info-item ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.info-item ul li {
+    font-size: 1rem; /* Tamanho da fonte reduzido */
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilo para o cabeçalho das seções */
+.info-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    padding: 1rem;
+    background-color: rgba(221, 176, 176, 1);
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.info-header:hover {
+    background-color: rgba(200, 150, 150, 1); /* Cor ao passar o mouse */
+}
+
+.info-header h3 {
+    margin: 0 1rem; /* Espaçamento entre o ícone e o texto */
+    flex-grow: 1; /* Faz o título ocupar o espaço restante */
+}
+
+.info-header .icon {
+    font-size: 2rem;
+    color: #611515;
+}
+
+.info-header .fa-chevron-down {
+    font-size: 1.2rem;
+    color: #611515;
+    transition: transform 0.3s ease; /* Animação da seta */
+}
+
+/* Estilo para o conteúdo das seções */
+.info-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 1rem;
+    background-color: rgba(221, 176, 176, 0.8);
+    border-radius: 0 0 10px 10px;
+}
+
+/* Classe para expandir o conteúdo */
+.info-content.expanded {
+    max-height: 500px; /* Ajuste conforme o conteúdo */
+    padding: 1rem;
+}
+
+
+
+
+/* Estilos da Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #611515;
+}
+
+.close-modal:hover {
+    color: #000;
+}
+
+.contatos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contato-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: rgba(221, 176, 176, 1);
+    color: #611515;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.contato-link:hover {
+    background-color: rgba(200, 150, 150, 1);
+}
+
+/* ... outros estilos do seu site ... */
+
+/* Estilos do Carrossel */
+.carrossel {
+    margin: 2rem auto;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 650px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 10px #611515);
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #611515;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 1.5rem;
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.swiper-pagination-bullet {
+    background-color: #611515;
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    transition: opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Loja de Resina</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="logo1.png" alt="Logo da Loja">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="site.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="banner">
+        <h1>TmResinas</h1>
+        <p>Produtos únicos e personalizados feitos com amor!</p>
+    </section>
+   
+
+    <!-- Seção de Produtos (inicialmente oculta) -->
+    <section id="produtos" style="display: none;">
+        <h2>Nossos Produtos</h2>
+        <!-- Conteúdo da seção de produtos -->
+    </section>
+
+    <!-- Seção de Produtos (inicialmente oculta) -->
+    <section id="produtos" style="display: none;">
+        <h2>Nossos Produtos</h2>
+
+        <!-- Categoria 1: Canetas Personalizadas -->
+        <div class="categoria">
+            <h3>Canetas Personalizadas</h3>
+            <div class="produtos-lista">
+                    <div class="produto">
+    <img src="canetas.jpg" alt="Caneta Personalizada">
+    <h3>Caneta Personalizada</h3>
+    <p>A partir de: <br>R$ 15,00</p>
+    <a href="caneta-personalizada.html"> <!-- Link para a nova página -->
+        <span>Ver Modelos</span>
+    </a>
+</div>
+            </div>
+        </div>
+
+        <!-- Categoria 2: Marcadores de Página -->
+        <div class="categoria">
+            <h3>Marca Páginas Personalizados</h3>
+            <div class="produtos-lista">
+                <div class="produto">
+                    <img src="Marcadores.jpg" alt="Marca Página Personalizado">
+                    <h3>Marca Página Personalizado</h3>
+                    <p>A partir de: <br>R$ 25,00</p>
+                    <a href="Marca-pagina.html">
+                        <span>Ver modelos</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categoria 3: Porta Copos -->
+        <div class="categoria">
+            <h3>Porta Copos</h3>
+            <div class="produtos-lista">
+                <div class="produto">
+                    <img src="portacopo.jpg" alt="Porta Copo">
+                    <h3>Porta Copo</h3>
+                    <p>A partir de: <br>R$ 20,00</p>
+                    <a href="porta-copo.html"> <!-- Link para a página de Porta Copo -->
+                        <span>Ver Modelos</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categoria 4: Chaveiros Personalizados -->
+        <div class="categoria">
+            <h3>Chaveiros Personalizados</h3>
+            <div class="produtos-lista">
+                <div class="produto">
+                    <img src="chaveiro.jpg" alt="Chaveiro Personalizado">
+                    <h3>Chaveiro Personalizado</h3>
+                    <p>A partir de: <br>R$ 15,00</p>
+                    <a href="chaveiros.html"> <!-- Link para a página de Chaveiros -->
+                        <span>Ver Modelos</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <!-- Rodapé -->
+    <footer id="contato">
+        <p>Entre em contato:</p>
+        <div class="redes-sociais">
+            <a href="https://wa.me/+5561984460667" target="_blank">
+                <i class="fab fa-whatsapp"></i> <!-- Ícone do WhatsApp -->
+            </a>
+            <a href="https://www.instagram.com/tmresinass/" target="_blank">
+                <i class="fab fa-instagram"></i> <!-- Ícone do Instagram -->
+            </a>
+        </div>
+    </footer>
+
+    <!-- Modal de Contato -->
+<div id="modal-contato" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Entre em Contato</h2>
+        <div class="contatos">
+            <a href="https://wa.me/+5561984460667" target="_blank" class="contato-link">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.instagram.com/tmresinass/" target="_blank" class="contato-link">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Captura elementos da modal
+    const modal = document.getElementById('modal-contato');
+    const closeModalBtn = document.querySelector('.close-modal');
+
+    // Função para abrir a modal
+    function abrirModal() {
+        modal.style.display = 'flex';
+    }
+
+    // Função para fechar a modal
+    function fecharModal() {
+        modal.style.display = 'none';
+    }
+
+    // Adiciona evento de clique no link "Contato" para abrir a modal
+    document.querySelector('a[href="#contato"]').addEventListener('click', function(event) {
+        event.preventDefault(); // Evita o comportamento padrão do link
+        abrirModal();
+    });
+
+    // Fecha a modal ao clicar no botão de fechar
+    closeModalBtn.addEventListener('click', fecharModal);
+
+    // Fecha a modal ao clicar fora do conteúdo
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            fecharModal();
+        }
+    });
+    
+    
+</script>
+
+</body>
+</html>
