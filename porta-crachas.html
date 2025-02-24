@@ -9,19 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon2.png">
 </head>
 <body>
     <!-- Cabeçalho -->
     <header>
         <div class="logo">
-            <img src="logo1.png" alt="Logo da Loja">
+            <img src="logo1.png" alt="Logo da Loja"class="expandir-imagem">
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <li><a href="produtos.html">Produtos</a></li>
                 <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
                 <li><a href="#contato">Contato</a></li>
+                
             </ul>
         </nav>
     </header>
@@ -35,7 +38,7 @@
             <!-- Modelos de Porta-Crachás -->
             <div class="modelos">
                 <div class="modelo">
-                    <img src="borboelta.png" alt="Porta-Crachá Modelo 1">
+                    <img src="borboelta.png" alt="Porta-Crachá Modelo 1"class="expandir-imagem">
                     <h3>Porta-Crachá com nome personalizado</h3>
                     <p>R$ 20,00</p>
                     <br><br><br><br><br>
@@ -45,7 +48,7 @@
                 </div>
 
                 <div class="modelo">
-                    <img src="modelo.png" alt="Porta-Crachá Modelo 2">
+                    <img src="modelo.png" alt="Porta-Crachá Modelo 2"class="expandir-imagem">
                     <h3>Porta-Crachá com logo da empresa</h3>
                     <p>R$ 25,00</p>
                     <a href="https://wa.me/+5561984460667?text=Olá, gostaria de comprar o produto: Porta-Crachá com logo da empresa" target="_blank">
@@ -54,7 +57,7 @@
                 </div>
 
                 <div class="modelo"><br><br><br>
-                    <img src="santo.png" alt="Porta-Crachá Modelo 3">
+                    <img src="santo.png" alt="Porta-Crachá Modelo 3"class="expandir-imagem">
                     <h3>Porta-Crachá Personalizado</h3>
                     <p>R$ 22,00</p>
                     <br><br><br>
@@ -64,7 +67,7 @@
                 </div>
 
                 <div class="modelo">
-                    <img src="portacracha.png" alt="Porta-Crachá Modelo 3">
+                    <img src="portacracha.png" alt="Porta-Crachá Modelo 3"class="expandir-imagem">
                     <h3>Porta-Crachá Personalizado</h3>
                     <p>R$ 22,00</p>
                     <br><br><br><br><br><br>
@@ -74,7 +77,7 @@
                 </div>
 
                 <div class="modelo"><br><br><br>
-                    <img src="tecenfe.png" alt="Porta-Crachá Modelo 3">
+                    <img src="tecenfe.png" alt="Porta-Crachá Modelo 3"class="expandir-imagem">
                     <h3>Porta-Crachá Personalizado</h3>
                     <p>R$ 22,00</p>
                     <br><br><br><br><br>
@@ -84,7 +87,7 @@
                 </div>
 
                 <div class="modelo">
-                    <img src="stitch.png" alt="Porta-Crachá Modelo 3">
+                    <img src="stitch.png" alt="Porta-Crachá Modelo 3"class="expandir-imagem">
                     <h3>Porta-Crachá Personalizado</h3>
                     <p>R$ 22,00</p>
                     <a href="https://wa.me/+5561984460667?text=Olá, gostaria de comprar o produto: Porta-Crachá Personalizado" target="_blank">
@@ -134,6 +137,11 @@
         </div>
     </div>
 
+    <!-- Lightbox -->
+<div id="lightbox">
+    <img id="lightbox-img" src="" alt="Imagem Expandida">
+</div>
+
     <script>
         // Captura elementos da modal
         const modal = document.getElementById('modal-contato');
@@ -164,6 +172,28 @@
                 fecharModal();
             }
         });
+
+        // Captura todas as imagens com a classe "expandir-imagem"
+    const imagens = document.querySelectorAll('.expandir-imagem');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    // Adiciona um evento de clique a cada imagem
+    imagens.forEach(imagem => {
+        imagem.addEventListener('click', () => {
+            lightboxImg.src = imagem.src; // Define a imagem na lightbox
+            lightbox.classList.add('ativo'); // Exibe a lightbox
+        });
+    });
+
+    // Fecha a lightbox ao clicar fora da imagem
+    lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+            lightbox.classList.remove('ativo');
+        }
+    });
+
+
     </script>
 </body>
 </html>
