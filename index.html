@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,20 +12,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="icon" type="image/png" href="favicon2.png">
 </head>
 
 <body>
     <!-- Cabeçalho -->
     <header>
         <div class="logo">
-            <img src="logo1.png" alt="Logo da Loja">
+            <img src="logo1.png" alt="Logo da Loja"class="expandir-imagem">
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <li><a href="produtos.html">Produtos</a></li>
                 <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
                 <li><a href="#contato">Contato</a></li>
+                
             </ul>
         </nav>
     </header>
@@ -51,7 +55,7 @@
             <h3>Canetas Personalizadas</h3>
             <div class="produtos-lista">
                     <div class="produto">
-    <img src="canetas.jpg" alt="Caneta Personalizada">
+    <img src="canetas.jpg" alt="Caneta Personalizada"class="expandir-imagem">
     <h3>Caneta Personalizada</h3>
     <p>A partir de: <br>R$ 15,00</p>
     <a href="caneta-personalizada.html"> <!-- Link para a nova página -->
@@ -66,10 +70,10 @@
             <h3>Marca Páginas Personalizados</h3>
             <div class="produtos-lista">
                 <div class="produto">
-                    <img src="Marcadores.jpg" alt="Marca Página Personalizado">
+                    <img src="Marcadores.jpg" alt="Marca Página Personalizado"class="expandir-imagem">
                     <h3>Marca Página Personalizado</h3>
                     <p>A partir de: <br>R$ 25,00</p>
-                    <a href="Marca-pagina.html">
+                    <a href="marca-pagina.html">
                         <span>Ver modelos</span>
                     </a>
                 </div>
@@ -81,7 +85,7 @@
             <h3>Porta Copos</h3>
             <div class="produtos-lista">
                 <div class="produto">
-                    <img src="portacopo.jpg" alt="Porta Copo">
+                    <img src="portacopo.jpg" alt="Porta Copo"class="expandir-imagem">
                     <h3>Porta Copo</h3>
                     <p>A partir de: <br>R$ 20,00</p>
                     <a href="porta-copo.html"> <!-- Link para a página de Porta Copo -->
@@ -96,10 +100,25 @@
             <h3>Chaveiros Personalizados</h3>
             <div class="produtos-lista">
                 <div class="produto">
-                    <img src="chaveiro.jpg" alt="Chaveiro Personalizado">
+                    <img src="chaveiro.jpg" alt="Chaveiro Personalizado"class="expandir-imagem">
                     <h3>Chaveiro Personalizado</h3>
                     <p>A partir de: <br>R$ 15,00</p>
                     <a href="chaveiros.html"> <!-- Link para a página de Chaveiros -->
+                        <span>Ver Modelos</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categoria 5: Porta-Crachás -->
+        <div class="categoria">
+            <h3>Porta-Crachás</h3>
+            <div class="produtos-lista">
+                <div class="produto">
+                    <img src="imagens/portacracha1.jpg" alt="Porta-Crachá"class="expandir-imagem">
+                    <h3>Porta-Crachá Personalizado</h3>
+                    <p>A partir de: <br>R$ 20,00</p>
+                    <a href="porta-crachas.html">
                         <span>Ver Modelos</span>
                     </a>
                 </div>
@@ -140,6 +159,11 @@
     </div>
 </div>
 
+<!-- Lightbox -->
+<div id="lightbox">
+    <img id="lightbox-img" src="" alt="Imagem Expandida">
+</div>
+
 <script>
     // Captura elementos da modal
     const modal = document.getElementById('modal-contato');
@@ -171,6 +195,25 @@
         }
     });
     
+    // Captura todas as imagens com a classe "expandir-imagem"
+    const imagens = document.querySelectorAll('.expandir-imagem');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    // Adiciona um evento de clique a cada imagem
+    imagens.forEach(imagem => {
+        imagem.addEventListener('click', () => {
+            lightboxImg.src = imagem.src; // Define a imagem na lightbox
+            lightbox.classList.add('ativo'); // Exibe a lightbox
+        });
+    });
+
+    // Fecha a lightbox ao clicar fora da imagem
+    lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+            lightbox.classList.remove('ativo');
+        }
+    });
     
 </script>
 
