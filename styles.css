@@ -349,7 +349,7 @@ footer p {
 }
 
 .info-item p {
-    font-size: 1rem; /* Tamanho da fonte reduzido */
+    font-size: 1.5rem; /* Tamanho da fonte reduzido */
     color: #333;
     margin-bottom: 1rem;
 }
@@ -416,9 +416,12 @@ footer p {
 
 .info-header .fa-heart {
     color: #611515; /* Cor do ícone */
-    font-size: 1.5rem; /* Tamanho do ícone */
+    font-size: 2rem; /* Tamanho do ícone */
     margin-right: 1rem; /* Espaçamento entre o ícone e o texto */
 }
+
+
+
 
 
 
@@ -484,67 +487,78 @@ footer p {
     background-color: rgba(200, 150, 150, 1);
 }
 
-/* ... outros estilos do seu site ... */
 
-/* Estilos do Carrossel */
-.carrossel {
-    margin: 2rem auto;
-    max-width: 1200px;
-    width: 100%;
-    padding: 0 1rem;
+
+
+/* Estilo para a galeria de vídeos e fotos */
+.galeria {
+    margin: 2rem 0;
+    text-align: center;
 }
 
-.swiper-container {
-    width: 100%;
-    height: 650px;
+.galeria h3 {
+    color: #611515;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.videos, .fotos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.video, .foto {
+    background-color: rgba(221, 176, 176, 1);
+    border: 8px solid #ddd;
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 20px 10px #611515);
+    padding: 1rem;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.swiper-slide img {
+.video:hover, .foto:hover {
+    background-color: rgba(56, 56, 56, 0.5);
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.foto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/* Estilo para a lightbox */
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-color: rgba(179 152 152);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
     border-radius: 10px;
 }
 
-.swiper-button-next, .swiper-button-prev {
-    color: #611515;
-    background-color: rgba(255, 255, 255, 0.8);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+#lightbox.ativo {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
-}
-
-.swiper-button-next:hover, .swiper-button-prev:hover {
-    background-color: rgba(255, 255, 255, 1);
-}
-
-.swiper-button-next::after, .swiper-button-prev::after {
-    font-size: 1.5rem;
-}
-
-.swiper-pagination {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.swiper-pagination-bullet {
-    background-color: #611515;
-    opacity: 0.5;
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    transition: opacity 0.3s ease;
-}
-
-.swiper-pagination-bullet-active {
-    opacity: 1;
 }
