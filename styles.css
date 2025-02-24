@@ -414,6 +414,11 @@ footer p {
     padding: 1rem;
 }
 
+.info-header .fa-heart {
+    color: #611515; /* Cor do ícone */
+    font-size: 1.5rem; /* Tamanho do ícone */
+    margin-right: 1rem; /* Espaçamento entre o ícone e o texto */
+}
 
 
 
