@@ -36,7 +36,7 @@
             <!-- Modelos de Marca Página -->
             <div class="modelos">
                 <div class="modelo">
-                    <img src="caminho/para/imagem1.jpg" alt="Marca Página Modelo 1">
+                    <img src="" alt="Marca Página Modelo 1">
                     <h3>Marca Página com fundo de princesa</h3>
                     <p>R$ 10,00</p>
                     <a href="https://wa.me/+5561984460667?text=Olá, gostaria de comprar o produto: Marca Página com o fundo de princesa" target="_blank">
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="modelo">
-                    <img src="caminho/para/imagem2.jpg" alt="Marca Página">
+                    <img src="" alt="Marca Página">
                     <h3>Marca Página personalizado com o nome</h3>
                     <p>R$ 12,00</p>
                     <a href="https://wa.me/+5561984460667?text=Olá, gostaria de comprar o produto: Marca Página personalizado com nome" target="_blank">
@@ -54,10 +54,10 @@
                 </div>
 
                 <div class="modelo">
-                    <img src="caminho/para/imagem3.jpg" alt="Marca Página">
+                    <img src="" alt="Marca Página">
                     <h3>Marca Página stich</h3>
                     <p>R$ 12,00</p>
-                    <a href="https://wa.me/+5561984460667?text=Olá, gostaria de comprar o produto: Marca Página Modelo stich" target="_blank">
+                    <a href="https://wa.me/+5561984460667?text=Olá, gostaria de comprar o produto: Marca Página Mdo stich" target="_blank">
                         <span>Comprar no WhatsApp</span>
                     </a>
                 </div>
@@ -70,61 +70,60 @@
     <footer id="contato">
         <p>Entre em contato:</p>
         <div class="redes-sociais">
-            <a href="https://wa.me/+5561984460667" target="_blank" aria-label="WhatsApp">
+            <a href="https://wa.me/+5561984460667" target="_blank">
                 <i class="fab fa-whatsapp"></i> <!-- Ícone do WhatsApp -->
             </a>
-            <a href="https://www.instagram.com/tmresinass/" target="_blank" aria-label="Instagram">
+            <a href="https://www.instagram.com/tmresinass/" target="_blank">
                 <i class="fab fa-instagram"></i> <!-- Ícone do Instagram -->
             </a>
         </div>
     </footer>
-
     <!-- Modal de Contato -->
-    <div id="modal-contato" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Entre em Contato</h2>
-            <div class="contatos">
-                <a href="https://wa.me/+5561984460667" target="_blank" class="contato-link" aria-label="WhatsApp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="https://www.instagram.com/tmresinass/" target="_blank" class="contato-link" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-            </div>
+<div id="modal-contato" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Entre em Contato</h2>
+        <div class="contatos">
+            <a href="https://wa.me/+5561984460667" target="_blank" class="contato-link">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.instagram.com/tmresinass/" target="_blank" class="contato-link">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
         </div>
     </div>
+</div>
 
-    <script>
-        // Captura elementos da modal
-        const modal = document.getElementById('modal-contato');
-        const closeModalBtn = document.querySelector('.close-modal');
+<script>
+    // Captura elementos da modal
+    const modal = document.getElementById('modal-contato');
+    const closeModalBtn = document.querySelector('.close-modal');
 
-        // Função para abrir a modal
-        function abrirModal() {
-            modal.style.display = 'flex';
+    // Função para abrir a modal
+    function abrirModal() {
+        modal.style.display = 'flex';
+    }
+
+    // Função para fechar a modal
+    function fecharModal() {
+        modal.style.display = 'none';
+    }
+
+    // Adiciona evento de clique no link "Contato" para abrir a modal
+    document.querySelector('a[href="#contato"]').addEventListener('click', function(event) {
+        event.preventDefault(); // Evita o comportamento padrão do link
+        abrirModal();
+    });
+
+    // Fecha a modal ao clicar no botão de fechar
+    closeModalBtn.addEventListener('click', fecharModal);
+
+    // Fecha a modal ao clicar fora do conteúdo
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            fecharModal();
         }
-
-        // Função para fechar a modal
-        function fecharModal() {
-            modal.style.display = 'none';
-        }
-
-        // Adiciona evento de clique no link "Contato" para abrir a modal
-        document.querySelector('a[href="#contato"]').addEventListener('click', function(event) {
-            event.preventDefault(); // Evita o comportamento padrão do link
-            abrirModal();
-        });
-
-        // Fecha a modal ao clicar no botão de fechar
-        closeModalBtn.addEventListener('click', fecharModal);
-
-        // Fecha a modal ao clicar fora do conteúdo
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                fecharModal();
-            }
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
