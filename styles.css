@@ -627,7 +627,7 @@ footer p {
         font-size: 1.2rem; /* Reduz o tamanho dos ícones */
     }
     .info-content {
-        max-height: none; /* Permite que o conteúdo se expanda */
-        overflow-y: auto; /* Adiciona rolagem se necessário */
+        max-height: 0; /* Permite que o conteúdo se expanda */
+        overflow-y: hidden; /* Adiciona rolagem se necessário */
     }
 }
