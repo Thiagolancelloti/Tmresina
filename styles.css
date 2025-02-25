@@ -282,7 +282,7 @@ footer p {
 .modelo {
     background-color: var(--cor-secundaria);
     border: 8px solid #ddd;
-    border-radius: 10px;
+    border-radius: 30px;
     padding: 1rem;
     width: 300px;
     text-align: center;
