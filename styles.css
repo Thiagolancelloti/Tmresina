@@ -103,15 +103,23 @@ nav ul li a:hover::after {
 .video-inicio {
     text-align: center; /* Centraliza o vídeo */
     margin: 2rem 0; /* Adiciona margem acima e abaixo do vídeo */
+    padding: 1rem; /* Espaçamento interno */
+    background-color: rgba(221, 176, 176, 1); /* Cor de fundo igual aos produtos */
+    border: 8px solid #ddd; /* Borda igual aos produtos */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    max-width: 600px; /* Largura máxima do contêiner do vídeo */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+    overflow: hidden; /* Garante que o vídeo não ultrapasse o contêiner */
 }
 
 .video-inicio video {
-    max-width: 100%; /* Garante que o vídeo não ultrapasse a largura do contêiner */
-    height: auto; /* Mantém a proporção do vídeo */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    width: 100%; /* Ocupa 100% da largura do contêiner */
+    height: 400px; /* Altura fixa para criar um aspecto quadrado */
+    object-fit: cover; /* Garante que o vídeo cubra o espaço sem distorcer */
+    border-radius: 10px;
 }
-
 .banner h1 {
     font-size: 4rem;
 }
