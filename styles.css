@@ -556,30 +556,74 @@ footer p {
 
 
 
-
 /* ==================== */
-/* Responsividade */
+/* Responsividade para dispositivos móveis */
 /* ==================== */
 @media (max-width: 768px) {
+    /* Ajustes para o header */
     header {
-        padding: 0 1rem;
+        padding: 0 1rem; /* Reduz o padding nas laterais */
+    }
+
+    header .logo img {
+        max-width: 250px; /* Reduz o tamanho da logo */
     }
 
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Coloca os itens do menu em coluna */
+        gap: 0.5rem; /* Adiciona espaçamento entre os itens */
     }
 
-    .produto, .modelo, .video, .foto {
-        width: 100%;
+    nav ul li {
+        margin: 0; /* Remove a margem lateral */
     }
 
+    nav ul li a {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte */
+    }
+
+    /* Ajustes para o banner */
     .banner h1 {
-        font-size: 2.5rem;
+        font-size: 2.5rem; /* Reduz o tamanho do título */
     }
 
     .banner p {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Reduz o tamanho do parágrafo */
+    }
+
+    /* Ajustes para os produtos */
+    .produto {
+        width: 100%; /* Ocupa toda a largura da tela */
+        margin-bottom: 1rem; /* Adiciona espaçamento entre os cards */
+    }
+
+    .produto img {
+        height: 150px; /* Reduz a altura das imagens */
+    }
+
+    .produto h3, .produto h4 {
+        font-size: 1rem; /* Reduz o tamanho da fonte */
+    }
+
+    .produto p {
+        font-size: 1rem; /* Reduz o tamanho da fonte */
+    }
+
+    .produto a {
+        font-size: 1rem; /* Reduz o tamanho da fonte */
+        padding: 0.5rem 1rem; /* Ajusta o padding do botão */
+    }
+
+    /* Ajustes para o rodapé */
+    footer {
+        padding: 1rem; /* Reduz o padding */
+    }
+
+    footer p {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte */
+    }
+
+    .redes-sociais a {
+        font-size: 1.2rem; /* Reduz o tamanho dos ícones */
     }
 }
-
