@@ -1,4 +1,15 @@
-/* Reset básico */
+/* ==================== */
+/* Reset e Estilos Globais */
+/* ==================== */
+:root {
+    --cor-primaria: #611515;
+    --cor-secundaria: rgba(221, 176, 176, 1);
+    --cor-fundo: rgb(236, 201, 201);
+    --cor-texto: #333;
+    --cor-destaque: rgb(172, 110, 110);
+    --sombra: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,38 +17,37 @@
 }
 
 html, body {
-    height: 100%; /* Ocupa 100% da altura da tela */
+    height: 100%;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
 }
 
 body {
     display: flex;
-    flex-direction: column; /* Organiza o conteúdo em coluna */
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: rgb(236, 201, 201);
-    color: #333;
+    flex-direction: column;
 }
 
-/* Header */
+/* ==================== */
+/* Header e Navegação */
+/* ==================== */
 header {
-    background-color: rgba(221, 176, 176, 1);
+    background-color: var(--cor-secundaria);
     color: #fff;
     padding: 1rem 0;
     text-align: center;
-        display: flex;
-        align-items: center; /* Centraliza verticalmente */
-        justify-content: space-between; /* Espaço entre logo e menu */
-        padding: 0 5rem; /* Adiciona um padding nas laterais */
-        flex-direction: column; /* Coloca a logo e o menu em coluna */
-    align-items: center; /* Centraliza horizontalmente */
-    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5rem;
+    flex-direction: column;
 }
 
 header .logo img {
     max-width: 350px;
 }
 
-/* Menu de Navegação */
 nav ul {
     list-style: none;
     display: flex;
@@ -47,18 +57,15 @@ nav ul {
 
 nav ul li {
     margin: 0 2rem;
-    
     position: relative;
 }
 
 nav ul li a {
-    color: #611515;
+    color: var(--cor-primaria);
     text-decoration: none;
-    font-size: 2.0rem;
+    font-size: 2rem;
     transition: color 0.3s ease;
     font-family: "Playwrite IT Moderna", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
 }
 
 nav ul li a:hover {
@@ -70,7 +77,7 @@ nav ul li a::after {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #611515;
+    background-color: var(--cor-primaria);
     bottom: -5px;
     left: 0;
     transform: scaleX(0);
@@ -81,18 +88,28 @@ nav ul li a:hover::after {
     transform: scaleX(1);
 }
 
+/* ==================== */
 /* Banner */
+/* ==================== */
 .banner {
-    background-color: rgba(221, 176, 176, 1);
-    background-size: cover;
-    background-position: center;
-    color: #611515;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
     text-align: center;
-    padding: 0rem 1rem; /* Padding reduzido */
+    padding: 2rem 1rem;
     font-family: "Playwrite IT Moderna", serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
+}
+
+/* Estilo para o vídeo na página inicial */
+.video-inicio {
+    text-align: center; /* Centraliza o vídeo */
+    margin: 2rem 0; /* Adiciona margem acima e abaixo do vídeo */
+}
+
+.video-inicio video {
+    max-width: 100%; /* Garante que o vídeo não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção do vídeo */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
 .banner h1 {
@@ -103,19 +120,18 @@ nav ul li a:hover::after {
     font-size: 1.5rem;
 }
 
+/* ==================== */
 /* Seção de Produtos */
+/* ==================== */
 #produtos {
     padding: 1.5rem;
     text-align: center;
 }
 
 #produtos h2 {
-    color: #611515;
+    color: var(--cor-primaria);
     font-size: 3rem;
     font-family: "Playwrite IT Moderna", serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
 }
 
 .categoria {
@@ -123,8 +139,8 @@ nav ul li a:hover::after {
 }
 
 .categoria h3 {
-    font-size: 1rem;
-    color: #611515;
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
     margin-bottom: 1.5rem;
 }
 
@@ -136,85 +152,41 @@ nav ul li a:hover::after {
 }
 
 .produto {
-    background-color: rgba(221, 176, 176, 1);
+    background-color: var(--cor-secundaria);
     border: 8px solid #ddd;
     border-radius: 10px;
-    padding: 1rem; /* Padding aumentado */
-    width: 250px; /* Largura aumentada */
+    padding: 1rem;
+    width: 250px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
+    align-items: center;
 }
 
 .produto:hover {
     background-color: rgba(56, 56, 56, 0.5);
     color: #fff;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: var(--sombra);
 }
 
 .produto img {
-    width: 200px; /* Largura aumentada */
-    height: 200px; /* Altura aumentada */
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
 .produto h3, .produto h4 {
     margin: 0.5rem 0;
-    color: #333;
+    color: var(--cor-texto);
 }
 
 .produto p {
     font-size: 1.2rem;
-    color: #611515;
+    color: var(--cor-primaria);
     font-weight: bold;
-}
-
-footer {
-    flex-shrink: 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: rgba(221, 176, 176, 1);
-}
-
-footer a {
-    margin: 10px 0;
-    text-decoration: none;
-    font-size: 1rem; /* Tamanho reduzido */
-    color: #611515;
-}
-
-footer p {
-    font-size: 1rem; /* Tamanho reduzido */
-    margin-bottom: 0rem;
-    color: #611515;
-    font-family: "Playwrite IT Moderna", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
-
-.redes-sociais {
-    display: flex;
-    gap: 1rem; /* Espa
-    margin-top: 0rem; /* Espaçamento reduzido */
-}
-
-.redes-sociais a {
-    color: #611515;
-    font-size: 1.5rem; /* Tamanho reduzido */
-    transition: color 0.3s ease;
-}
-
-.redes-sociais a:hover {
-    color: rgb(236, 201, 201);
 }
 
 .produto a {
@@ -223,7 +195,7 @@ footer p {
     justify-content: center;
     text-decoration: none;
     color: #fff;
-    background-color: rgb(172, 110, 110);
+    background-color: var(--cor-destaque);
     padding: 0.8rem 1.5rem;
     border-radius: 5px;
     margin-top: 0.5rem;
@@ -232,27 +204,63 @@ footer p {
 }
 
 .produto a:hover {
-    background-color: rgb(172, 110, 110);
+    background-color: rgba(172, 110, 110, 0.8);
 }
 
-/* Estilo para a página de detalhes do produto */
+/* ==================== */
+/* Rodapé */
+/* ==================== */
+footer {
+    flex-shrink: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--cor-secundaria);
+}
+
+footer p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--cor-primaria);
+    font-family: "Playwrite IT Moderna", serif;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.redes-sociais a {
+    color: var(--cor-primaria);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.redes-sociais a:hover {
+    color: var(--cor-fundo);
+}
+
+/* ==================== */
+/* Páginas de Detalhes */
+/* ==================== */
 .detalhes-produto {
     padding: 3rem;
     text-align: center;
 }
 
 .detalhes-produto h2 {
-    color: #611515;
+    color: var(--cor-primaria);
     font-size: 4rem;
     font-family: "Playwrite IT Moderna", serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
 }
 
 .detalhes-produto p {
     font-size: 1.5rem;
-    color: #611515;
+    color: var(--cor-primaria);
     margin-bottom: 2rem;
 }
 
@@ -264,7 +272,7 @@ footer p {
 }
 
 .modelo {
-    background-color: rgba(221, 176, 176, 1);
+    background-color: var(--cor-secundaria);
     border: 8px solid #ddd;
     border-radius: 10px;
     padding: 1rem;
@@ -277,7 +285,7 @@ footer p {
     background-color: rgba(56, 56, 56, 0.5);
     color: #fff;
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--sombra);
 }
 
 .modelo img {
@@ -288,12 +296,12 @@ footer p {
 
 .modelo h3 {
     margin: 0.5rem 0;
-    color: #333;
+    color: var(--cor-texto);
 }
 
 .modelo p {
     font-size: 1.2rem;
-    color: #611515;
+    color: var(--cor-primaria);
     font-weight: bold;
 }
 
@@ -303,7 +311,7 @@ footer p {
     justify-content: center;
     text-decoration: none;
     color: #fff;
-    background-color: rgb(172, 110, 110);
+    background-color: var(--cor-destaque);
     padding: 0.8rem 1.5rem;
     border-radius: 5px;
     margin-top: 0.5rem;
@@ -312,28 +320,26 @@ footer p {
 }
 
 .modelo a:hover {
-    background-color: rgb(172, 110, 110);
+    background-color: rgba(172, 110, 110, 0.8);
 }
 
-/* Estilo para a página de informações */
+/* ==================== */
+/* Página de Informações */
+/* ==================== */
 .informacoes {
     padding: 3rem;
     text-align: center;
-    
 }
 
 .informacoes h2 {
-    color: #611515;
+    color: var(--cor-primaria);
     font-size: 3rem;
     font-family: "Playwrite IT Moderna", serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
     margin-bottom: 2rem;
 }
 
 .info-item {
-    background-color: rgba(221, 176, 176, 1);
+    background-color: var(--cor-secundaria);
     border: 8px solid #ddd;
     border-radius: 10px;
     padding: 1.5rem;
@@ -343,62 +349,48 @@ footer p {
 }
 
 .info-item h3 {
-    color: #611515;
-    font-size: 1.5rem; /* Tamanho da fonte reduzido */
+    color: var(--cor-primaria);
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
 .info-item p {
-    font-size: 1.5rem; /* Tamanho da fonte reduzido */
-    color: #333;
+    font-size: 1.2rem;
+    color: var(--cor-texto);
     margin-bottom: 1rem;
 }
 
-.info-item ul {
-    list-style-type: disc;
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-}
-
-.info-item ul li {
-    font-size: 1rem; /* Tamanho da fonte reduzido */
-    color: #333;
-    margin-bottom: 0.5rem;
-}
-
-/* Estilo para o cabeçalho das seções */
 .info-header {
     display: flex;
     align-items: center;
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    cursor: pointer;
     padding: 1rem;
-    background-color: rgba(221, 176, 176, 1);
+    background-color: var(--cor-secundaria);
     border-radius: 10px;
     margin-bottom: 0.5rem;
     transition: background-color 0.3s ease;
 }
 
 .info-header:hover {
-    background-color: rgba(200, 150, 150, 1); /* Cor ao passar o mouse */
+    background-color: rgba(200, 150, 150, 1);
 }
 
 .info-header h3 {
-    margin: 0 1rem; /* Espaçamento entre o ícone e o texto */
-    flex-grow: 1; /* Faz o título ocupar o espaço restante */
+    margin: 0 1rem;
+    flex-grow: 1;
 }
 
 .info-header .icon {
     font-size: 2rem;
-    color: #611515;
+    color: var(--cor-primaria);
 }
 
 .info-header .fa-chevron-down {
     font-size: 1.2rem;
-    color: #611515;
-    transition: transform 0.3s ease; /* Animação da seta */
+    color: var(--cor-primaria);
+    transition: transform 0.3s ease;
 }
 
-/* Estilo para o conteúdo das seções */
 .info-content {
     max-height: 0;
     overflow: hidden;
@@ -408,24 +400,14 @@ footer p {
     border-radius: 0 0 10px 10px;
 }
 
-/* Classe para expandir o conteúdo */
 .info-content.expanded {
-    max-height: 500px; /* Ajuste conforme o conteúdo */
+    max-height: 500px;
     padding: 1rem;
 }
 
-.info-header .fa-heart {
-    color: #611515; /* Cor do ícone */
-    font-size: 2rem; /* Tamanho do ícone */
-    margin-right: 1rem; /* Espaçamento entre o ícone e o texto */
-}
-
-
-
-
-
-
-/* Estilos da Modal */
+/* ==================== */
+/* Modal de Contato */
+/* ==================== */
 .modal {
     display: none;
     position: fixed;
@@ -455,7 +437,7 @@ footer p {
     right: 15px;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #611515;
+    color: var(--cor-primaria);
 }
 
 .close-modal:hover {
@@ -475,8 +457,8 @@ footer p {
     justify-content: center;
     gap: 0.5rem;
     padding: 0.8rem 1.5rem;
-    background-color: rgba(221, 176, 176, 1);
-    color: #611515;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.2rem;
@@ -487,17 +469,16 @@ footer p {
     background-color: rgba(200, 150, 150, 1);
 }
 
-
-
-
-/* Estilo para a galeria de vídeos e fotos */
+/* ==================== */
+/* Galeria de Vídeos e Fotos */
+/* ==================== */
 .galeria {
     margin: 2rem 0;
     text-align: center;
 }
 
 .galeria h3 {
-    color: #611515;
+    color: var(--cor-primaria);
     font-size: 2rem;
     margin-bottom: 1.5rem;
 }
@@ -510,7 +491,7 @@ footer p {
 }
 
 .video, .foto {
-    background-color: rgba(221, 176, 176, 1);
+    background-color: var(--cor-secundaria);
     border: 8px solid #ddd;
     border-radius: 10px;
     padding: 1rem;
@@ -523,7 +504,7 @@ footer p {
     background-color: rgba(56, 56, 56, 0.5);
     color: #fff;
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--sombra);
 }
 
 .video video {
@@ -538,8 +519,9 @@ footer p {
     border-radius: 10px;
 }
 
-
-/* Estilo para a lightbox */
+/* ==================== */
+/* Lightbox */
+/* ==================== */
 #lightbox {
     display: none;
     position: fixed;
@@ -547,7 +529,7 @@ footer p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(179 152 152);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     justify-content: center;
     align-items: center;
@@ -562,3 +544,34 @@ footer p {
 #lightbox.ativo {
     display: flex;
 }
+
+
+
+
+
+/* ==================== */
+/* Responsividade */
+/* ==================== */
+@media (max-width: 768px) {
+    header {
+        padding: 0 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .produto, .modelo, .video, .foto {
+        width: 100%;
+    }
+
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner p {
+        font-size: 1.2rem;
+    }
+}
+
