@@ -628,6 +628,6 @@ footer p {
     }
     .info-content {
         max-height: 0; /* Permite que o conteúdo se expanda */
-        overflow-y: hidden; /* Adiciona rolagem se necessário */
+        overflow-y: auto; /* Adiciona rolagem se necessário */
     }
 }
