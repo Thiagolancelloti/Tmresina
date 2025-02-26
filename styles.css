@@ -181,10 +181,11 @@ nav ul li a:hover::after {
 }
 
 .produto img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+     width: 100%; /* Ocupa 100% da largura do contêiner */
+    height: 200px; /* Altura fixa para criar um aspecto quadrado */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    border-radius: 10px; /* Bordas arredondadas */
+
 }
 
 .produto h3, .produto h4 {
