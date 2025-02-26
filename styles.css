@@ -171,6 +171,8 @@ nav ul li a:hover::after {
     display: flex;
     flex-direction: column;
     align-items: center;
+     justify-content: space-between; /* Distribui o espaço uniformemente */
+    min-height: 400px; /* Altura mínima para os cards */
 }
 
 .produto:hover {
