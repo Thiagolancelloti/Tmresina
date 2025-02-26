@@ -156,7 +156,8 @@ nav ul li a:hover::after {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 20px;
+    
 }
 
 .produto {
@@ -297,9 +298,10 @@ footer p {
 }
 
 .modelo img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+    width: 100%; /* Ocupa 100% da largura do contêiner */
+    height: 200px; /* Altura fixa para criar um aspecto quadrado */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    border-radius: 10px; /* Bordas arredondadas */
 }
 
 .modelo h3 {
